@@ -1,9 +1,9 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz para emprendedoras: ¿Cómo está tu negocio?</title>
+  <title>Quiz gratuito para emprendedoras: ¿Cómo está tu negocio?</title>
   <meta name="description" content="Haz este quiz gratuito para emprendedoras y descubre si tu negocio está en caos o bien organizado. Recibe un diagnóstico rápido con consejos prácticos para mejorar tu emprendimiento.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,18 +30,19 @@
     .btn:hover {
       transform: translateY(-2px);
     }
-    /* Estilos para la selección de opciones del quiz */
+    /* Estilos para los botones del quiz */
     .option-btn {
-      background-color: #ffffff;
-      border: 2px solid #e5e7eb;
+      background-color: #f3f4f6;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
     }
     .option-btn:hover {
-      border-color: #9ca3af;
+      background-color: #e5e7eb;
     }
     .option-btn.selected {
-      background-color: #f7d794; /* Color de fondo para la selección */
-      border-color: #e0b090; /* Borde más oscuro */
-      color: #374151; /* Texto más oscuro */
+      background-color: #f7d794;
+      border-color: #e0b090;
+      color: #374151;
     }
   </style>
 </head>
@@ -83,14 +84,25 @@
         <p class="text-lg mb-2">Puntuación:</p>
         <p id="score-text" class="text-5xl md:text-6xl font-extrabold"></p>
       </div>
-      <p id="result-message" class="text-lg text-gray-700 mb-6"></p>
-      <a href="https://www.copybusiness.net/la-brujula-del-emprendedor" target="_blank" class="w-full btn bg-gray-800 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-gray-700 block">
-        Descubre la solución
+      
+      <p id="result-message" class="text-lg text-gray-700 mb-6 font-semibold"></p>
+      
+      <h3 class="text-2xl font-bold text-gray-800 mb-3">¡STOP AL CAOS! Tu Plan de Choque te espera.</h3>
+      <a id="lead-magnet-btn" 
+         href="[REEMPLAZAR_CON_TU_URL_OPTIMIZADA_DE_MAILERLITE]" 
+         target="_blank" 
+         class="w-full btn bg-gray-800 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-gray-700 block mb-3">
+        ¡SÍ! Dame la Plantilla TMI y mi Plan de Choque GRATIS
       </a>
-      <button id="restart-btn" class="w-full btn bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg text-lg mt-4 hover:bg-gray-300">
-        Repetir quiz
-      </button>
-    </div>
+      <p class="text-sm text-gray-600 mb-6">Recibirás el diagnóstico completo y la Plantilla TMI de Claridad Express directamente en tu correo. ¡Es la única tarea que debes hacer hoy!</p>
+
+      <a href="https://copybusiness.net/br%C3%BAjuladelemprendedor/" 
+         target="_blank" 
+         class="w-full btn bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-yellow-500 block">
+        Quiero el MAPA COMPLETO: Consigue La Brújula (19€)
+      </a>
+
+      </div>
   </main>
 
   <script>
@@ -151,13 +163,13 @@
     const resultsScreen = document.getElementById('results-screen');
     const startBtn = document.getElementById('start-btn');
     const nextBtn = document.getElementById('next-btn');
-    const restartBtn = document.getElementById('restart-btn');
     const questionText = document.getElementById('question-text');
     const optionsContainer = document.getElementById('options-container');
     const feedbackMessage = document.getElementById('feedback-message');
     const questionCount = document.getElementById('question-count');
     const scoreText = document.getElementById('score-text');
     const resultMessage = document.getElementById('result-message');
+    // const restartBtn = document.getElementById('restart-btn'); // Botón de reiniciar eliminado del HTML
 
     function showScreen(screenId) {
       startScreen.classList.add('hidden');
@@ -244,10 +256,9 @@
     });
 
     nextBtn.addEventListener('click', handleNextButton);
+    
+    // El botón de Reiniciar fue eliminado para reducir fricción.
 
-    restartBtn.addEventListener('click', () => {
-      showScreen('start-screen');
-    });
   </script>
 
 </body>
